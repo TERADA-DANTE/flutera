@@ -1,10 +1,3 @@
-# flutera
-Flutter with Terada
-
-# Goal
-Master this flutter thing
-
-
 
 
 플러터는 Dart로 만들어진 프레임워크
