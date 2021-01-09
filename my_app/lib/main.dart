@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
         // 앱 자체의 메타? 이므로 스마트폰등에서 이것을 참조한다.
         title: 'My first flutter app',
         theme: ThemeData(primarySwatch: Colors.blue), // ThemeData
-        // home.isRequired
+        // home.isRequired~~
         home: MyHomePage());
   }
 }
@@ -23,11 +23,8 @@ class MyHomePage extends StatelessWidget {
         title: Text('Hello world!'),
       ),
       body: Center(
-        child: Column(children: <Widget>[
-          Text('Terada'),
-          Text('Soeda'),
-          Text('Okimaryr')
-        ]),
+        child: Column(
+            children: <Widget>[Text('Terada'), Text('Soeda'), Text('Okimary')]),
       ),
     );
   }
