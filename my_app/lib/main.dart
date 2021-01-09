@@ -16,17 +16,36 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Hot reload🍆"),
-          centerTitle: true,
-          backgroundColor: Colors.redAccent,
-          elevation: 0.0,
+      backgroundColor: Colors.pink[200],
+      appBar: AppBar(
+        title: Text("Hot reload🍆"),
+        centerTitle: true,
+        backgroundColor: Colors.pinkAccent,
+        elevation: 0.0,
+      ),
+      body: Padding(
+        padding: EdgeInsets.fromLTRB(30.0, 40.0, 0.0, 0.0),
+        child: Column(
+          children: [
+            Text(
+              'Name',
+              style: TextStyle(color: Colors.white, letterSpacing: 2.0),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            Text(
+              'Dante',
+              style: TextStyle(
+                  color: Colors.white,
+                  letterSpacing: 2.0,
+                  fontSize: 28.0,
+                  fontWeight: FontWeight.bold),
+            )
+          ],
+          crossAxisAlignment: CrossAxisAlignment.start,
         ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [Text('Terada'), Text('Soeda'), Text('Okimary')],
-          ),
-        ));
+      ),
+    );
   }
 }
