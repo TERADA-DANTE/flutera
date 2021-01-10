@@ -64,7 +64,23 @@ class MyHomePage extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                   )
-                ])
+                ]),
+            ListTile(
+              leading: Icon(Icons.home, color: Colors.grey[900]),
+              title: Text('Home'),
+              onTap: () {
+                print('home clicked');
+              },
+            ),
+            ListTile(
+              autofocus: true,
+              title: Text('My account'),
+              leading: Icon(Icons.radio_button_on),
+            ),
+            ListTile(
+                dense: true,
+                title: Text('Inquiry'),
+                leading: Icon(Icons.youtube_searched_for))
           ],
         ),
       ),
