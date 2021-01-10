@@ -19,10 +19,28 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.pink[200],
       appBar: AppBar(
-        title: Text("Hot reload🍆"),
+        title: Text("User profile"),
         centerTitle: true,
         backgroundColor: Colors.pinkAccent,
-        elevation: 0.0,
+        elevation: 5.0,
+        leading: IconButton(
+          icon: Icon(Icons.menu),
+          onPressed: () {
+            print('hello world');
+          },
+        ),
+        actions: [
+          IconButton(
+              icon: Icon(Icons.shopping_cart),
+              onPressed: () {
+                print('hi');
+              }),
+          IconButton(
+              icon: Icon(Icons.search),
+              onPressed: () {
+                print('yup');
+              })
+        ],
       ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(30.0, 40.0, 0.0, 0.0),
@@ -48,7 +66,7 @@ class MyHomePage extends StatelessWidget {
               height: 10.0,
             ),
             Text(
-              'Dante',
+              '홍길동',
               style: TextStyle(
                   color: Colors.white,
                   letterSpacing: 2.0,
@@ -59,7 +77,7 @@ class MyHomePage extends StatelessWidget {
               height: 30.0,
             ),
             Text(
-              'Your power level',
+              'Age',
               style: TextStyle(color: Colors.white, letterSpacing: 2.0),
             ),
             SizedBox(
