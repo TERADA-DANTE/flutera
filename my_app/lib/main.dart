@@ -117,6 +117,7 @@ class MyHomePage extends StatelessWidget {
             ),
             Center(
                 child: Row(
+              // mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ClipRRect(
                   borderRadius: BorderRadius.circular(20),
