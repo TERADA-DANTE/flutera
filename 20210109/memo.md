@@ -48,4 +48,41 @@ Flutter를 사용하기 위해서는 반드시 Flutter material library를 가�
 
 Dart도 객체지향언어이기때문에 Class(당연히 메모리안에 존재) 안에 속성과 메소드(기능)이 존재하고 여기서 인스턴스가 만들어진다.
 
+Dart는 constructor를 생략해도 알아서 만들어준다.
+
+생성자 만드는 법
+
+```dart
+class Person{
+  String name;
+  int age;
+  bool isMale;
+  
+  Person({String name, int age, bool isMale}){
+      this.name = name;
+      this.age = age;
+      this.isMale = isMale;
+  }
+}
+
+void main(){
+  Person terada = new Person(name : 'terada', isMale : false, age : 14);
+  print([terada.name, terada.age, terada.isMale]);  
+}
+
+```
+자바스크립트(타입스크립트)랑 너무 비슷하다.
+
+Type 추론때문에 다음과 같은 선언도 에러를 발생시키진 않는다.
+```dart
+// Good
+int addNumber(int num1, int num2){
+  return num1 + num2;
+}
+
+// Not good, but still ok
+addNumber(num1, num2){
+  return num1 + num2;
+}
+```
 
