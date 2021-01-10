@@ -23,12 +23,6 @@ class MyHomePage extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.pinkAccent,
         elevation: 5.0,
-        leading: IconButton(
-          icon: Icon(Icons.menu),
-          onPressed: () {
-            print('hello world');
-          },
-        ),
         actions: [
           IconButton(
               icon: Icon(Icons.shopping_cart),
@@ -41,6 +35,38 @@ class MyHomePage extends StatelessWidget {
                 print('yup');
               })
         ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            UserAccountsDrawerHeader(
+                decoration: BoxDecoration(
+                    color: Colors.pink[200],
+                    borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(10.0),
+                        bottomRight: Radius.circular((10.0)))),
+                accountName: Text("홍길동"),
+                accountEmail: Text("test@gmail.com"),
+                currentAccountPicture: CircleAvatar(
+                  backgroundImage: AssetImage("assets/1.jpg"),
+                ),
+                onDetailsPressed: () {
+                  print('arrow clicked');
+                },
+                otherAccountsPictures: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(5),
+                    child: Image.asset(
+                      "assets/2.jpg",
+                      width: 100.0,
+                      height: 100.0,
+                      fit: BoxFit.cover,
+                    ),
+                  )
+                ])
+          ],
+        ),
       ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(30.0, 40.0, 0.0, 0.0),
