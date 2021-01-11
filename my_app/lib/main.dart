@@ -84,7 +84,6 @@ class MyHomePage extends StatelessWidget {
             ],
           ),
         ),
-        body: 
-        );
+        body: Center());
   }
 }
