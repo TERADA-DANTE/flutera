@@ -84,18 +84,7 @@ class MyHomePage extends StatelessWidget {
             ],
           ),
         ),
-        body: Center(
-            child: TextButton(
-          child: Text(
-            'Show me',
-            style: TextStyle(color: Colors.pink),
-          ),
-          onPressed: () {
-            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-              content: Text('Hellow world'),
-            ));
-            // ScaffoldMessenger.showSnackBar()
-          },
-        )));
+        body: 
+        );
   }
 }
