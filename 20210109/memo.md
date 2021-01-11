@@ -101,3 +101,44 @@ BuildContext는 중요하다.
 반드시 Scaffold.of(context)로 context를 참조한 뒤 SnackBar를 구현해야한다.
 여기서 `of`는 현재 주어진 context에서 위로 올라가면서 가장 가까운 Scaffold를 찾아서 반환하라는 뜻이다. 비슷하게 `Theme.of`가 있다.~
 
+Container widget은 **child 가 없으면** 가능한 크게 설정된다. child가 결정되면, child의 크기를 따른다. default가 좌측 상단으로 고정되기 때문에 이를 피하려면 Container widget을 SafeArea widget으로 감싸주어야한다.
+
+Container widget 은 1개의 child widget을 가지고, web과 비슷하게 padding, margin을 갖는다. `EdgeInset`의 등장!
+
+Center 와 Column widget
+
+```
+Row, Column은 MainAxis, CrossAxis가 반대입니다.
+```
+
+Center widget은 child 를 화면의 정중앙으로 고정시킨다. 하지만 Column widget은 가능한한 세로로 긴, 가로로는 child의 너비만큼의 사이즈를 갖게되므로, 이 둘을 같이 사용하게 되는경우 Center widget 은 Column widget에 대한 세로 통제권을 잃는다.
+이때 Column widget 의 children을 중앙으로 위치시키고 싶을때는 `MainAxisAlignment`를 사용하면된다.
+
+그렇다고해서 Column widget의 Container 사이즈가 변한것은아니다. 다만 children의 위치가 가운데로 정렬되었을 뿐. Container size를 children에 fit시키기 위해서는 `mainAxisSize` 를 사용해야한다.
+
+Column widget 에서 children의 정렬순서를 바꾸기 위해서는 `verticalDirection`을 사용해야한다.
+
+가로축 정렬에 관해서는 `crossAxisAlignment`를 사용한다. 이것을 응용해서 크기가 같은 children들을 화면의 가장 끝에 정렬하고 싶을때에는 다음과 같은 방법을 사용할 수 있다.(Invisible container)
+
+```dart
+
+// 크기가 다르다면 단순히 가로정렬을 사용할 수 있다.
+Column(
+  crossAxisAlignment : CrossAxisAlignment.end
+  children : [Container, Container, Container]
+)
+
+// 하지만 모두 같다면 Invisible container를 사용한다.
+Column(
+  crossAxisAlignment : CrossAxisAlignment.end
+  children : [Container, Container, Container, Container(
+    width : double.infinity,
+  )]
+)
+
+```
+
+Flutter layout에 관해 헷갈릴때에는 주저없이 `flutter layout cheat sheet`을 활용하자.
+
+
+
