@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 void main() => runApp(MyApp());
 
@@ -84,6 +85,26 @@ class MyHomePage extends StatelessWidget {
             ],
           ),
         ),
-        body: Center());
+        body: Center(
+            child: TextButton(
+          onPressed: () {
+            flutterToast();
+          },
+          child: Text(
+            'Show me',
+            style: TextStyle(color: Colors.white),
+          ),
+          style: TextButton.styleFrom(backgroundColor: Colors.teal),
+        )));
   }
+}
+
+void flutterToast() {
+  Fluttertoast.showToast(
+      msg: "Hello Flutter",
+      gravity: ToastGravity.BOTTOM,
+      backgroundColor: Colors.white,
+      fontSize: 20.0,
+      textColor: Colors.redAccent,
+      toastLength: Toast.LENGTH_SHORT);
 }
