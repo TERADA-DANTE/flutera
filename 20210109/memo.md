@@ -86,3 +86,18 @@ addNumber(num1, num2){
 }
 ```
 
+BuildContext
+BuildContext는 중요하다.
+종종 `Scaffold.of() called with a context that does not contain a Scaffold`라는 에러를 만나는데, 이 에러는 이것과 관련이 있다.
+공식문서에 따르면 BuildContext는 다음과 같다.
+`Widget tree에서 현재 Widget의 위치를 알 수 있는 정보`
+또한 BuildContext는 stateless widget 이나 state build method에 의해서 리턴 된 widget의 부모가 된다.
+
+
+아래 내용 `depreacted`
+
+~실제로 SnackBar class의 경우 다음과 같이 공식문서에 적혀있다.
+`Scaffold.of(context).showSnackBar`
+반드시 Scaffold.of(context)로 context를 참조한 뒤 SnackBar를 구현해야한다.
+여기서 `of`는 현재 주어진 context에서 위로 올라가면서 가장 가까운 Scaffold를 찾아서 반환하라는 뜻이다. 비슷하게 `Theme.of`가 있다.~
+
