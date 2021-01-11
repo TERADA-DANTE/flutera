@@ -154,7 +154,8 @@ Navigator.push(context, route)
 // context : 출발 라우트의 컨텍스트
 // route : 도착 라우트에 관한 함수
 
-// route = MaterialPageRoute((context)=>SecondPage())
+// route = MaterialPageRoute((_context_)=>SecondPage())
+// 사용하지 않는 인자의 경우 `_`을 사용하는 센스!
 
 // 제거
 Navigator.pop(context)
