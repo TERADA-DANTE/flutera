@@ -17,207 +17,85 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.pink[200],
-      appBar: AppBar(
-        title: Text("User profile"),
-        centerTitle: true,
-        backgroundColor: Colors.pinkAccent,
-        elevation: 5.0,
-        actions: [
-          IconButton(
-              icon: Icon(Icons.shopping_cart),
-              onPressed: () {
-                print('hi');
-              }),
-          IconButton(
-              icon: Icon(Icons.search),
-              onPressed: () {
-                print('yup');
-              })
-        ],
-      ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            UserAccountsDrawerHeader(
-                decoration: BoxDecoration(
-                    color: Colors.pink[200],
-                    borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(10.0),
-                        bottomRight: Radius.circular((10.0)))),
-                accountName: Text("홍길동"),
-                accountEmail: Text("test@gmail.com"),
-                currentAccountPicture: CircleAvatar(
-                  backgroundImage: AssetImage("assets/1.jpg"),
-                ),
-                onDetailsPressed: () {
-                  print('arrow clicked');
+        backgroundColor: Colors.pink[200],
+        appBar: AppBar(
+          title: Text("User profile"),
+          centerTitle: true,
+          backgroundColor: Colors.pinkAccent,
+          elevation: 5.0,
+          actions: [
+            IconButton(
+                icon: Icon(Icons.shopping_cart),
+                onPressed: () {
+                  print('hi');
+                }),
+            IconButton(
+                icon: Icon(Icons.search),
+                onPressed: () {
+                  print('yup');
+                })
+          ],
+        ),
+        drawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: [
+              UserAccountsDrawerHeader(
+                  decoration: BoxDecoration(
+                      color: Colors.pink[200],
+                      borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(10.0),
+                          bottomRight: Radius.circular((10.0)))),
+                  accountName: Text("홍길동"),
+                  accountEmail: Text("test@gmail.com"),
+                  currentAccountPicture: CircleAvatar(
+                    backgroundImage: AssetImage("assets/1.jpg"),
+                  ),
+                  onDetailsPressed: () {
+                    print('arrow clicked');
+                  },
+                  otherAccountsPictures: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(5),
+                      child: Image.asset(
+                        "assets/2.jpg",
+                        width: 100.0,
+                        height: 100.0,
+                        fit: BoxFit.cover,
+                      ),
+                    )
+                  ]),
+              ListTile(
+                leading: Icon(Icons.home, color: Colors.grey[900]),
+                title: Text('Home'),
+                onTap: () {
+                  print('home clicked');
                 },
-                otherAccountsPictures: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(5),
-                    child: Image.asset(
-                      "assets/2.jpg",
-                      width: 100.0,
-                      height: 100.0,
-                      fit: BoxFit.cover,
-                    ),
-                  )
-                ]),
-            ListTile(
-              leading: Icon(Icons.home, color: Colors.grey[900]),
-              title: Text('Home'),
-              onTap: () {
-                print('home clicked');
-              },
-            ),
-            ListTile(
-              autofocus: true,
-              title: Text('My account'),
-              leading: Icon(Icons.radio_button_on),
-            ),
-            ListTile(
-                dense: true,
-                title: Text('Inquiry'),
-                leading: Icon(Icons.youtube_searched_for))
-          ],
-        ),
-      ),
-      body: Padding(
-        padding: EdgeInsets.fromLTRB(30.0, 40.0, 0.0, 0.0),
-        child: Column(
-          children: [
-            Center(
-              child: CircleAvatar(
-                backgroundImage: AssetImage("assets/3.gif"),
-                radius: 60.0,
               ),
-            ),
-            Divider(
-              height: 60.0,
-              color: Colors.grey[850],
-              thickness: 0.5,
-              endIndent: 30.0,
-            ),
-            Text(
-              'Name',
-              style: TextStyle(color: Colors.white, letterSpacing: 2.0),
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            Text(
-              '홍길동',
-              style: TextStyle(
-                  color: Colors.white,
-                  letterSpacing: 2.0,
-                  fontSize: 28.0,
-                  fontWeight: FontWeight.bold),
-            ),
-            SizedBox(
-              height: 30.0,
-            ),
-            Text(
-              'Age',
-              style: TextStyle(color: Colors.white, letterSpacing: 2.0),
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            Text(
-              '14',
-              style: TextStyle(
-                  color: Colors.white,
-                  letterSpacing: 2.0,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 28.0),
-            ),
-            SizedBox(
-              height: 30.0,
-            ),
-            Row(
-              children: [
-                Icon(Icons.check_circle_outline),
-                SizedBox(
-                  width: 10.0,
-                ),
-                Text(
-                  "using lightsaber",
-                  style: TextStyle(fontSize: 16.0, letterSpacing: 1.0),
-                )
-              ],
-            ),
-            Row(
-              children: [
-                Icon(Icons.check_circle_outline),
-                SizedBox(
-                  width: 10.0,
-                ),
-                Text(
-                  "Face hero tattoo",
-                  style: TextStyle(fontSize: 16.0, letterSpacing: 1.0),
-                )
-              ],
-            ),
-            Row(
-              children: [
-                Icon(Icons.check_circle_outline),
-                SizedBox(
-                  width: 10.0,
-                ),
-                Text(
-                  "fire frames",
-                  style: TextStyle(fontSize: 16.0, letterSpacing: 1.0),
-                )
-              ],
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            Center(
-                child: Row(
-              // mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(20),
-                  child: Image.asset(
-                    "assets/1.jpg",
-                    width: 100.0,
-                    height: 100.0,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                SizedBox(
-                  width: 10.0,
-                ),
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(20),
-                  child: Image.asset(
-                    "assets/2.jpg",
-                    width: 100.0,
-                    height: 100.0,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                SizedBox(
-                  width: 10.0,
-                ),
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(20),
-                  child: Image.asset(
-                    "assets/3.gif",
-                    width: 100.0,
-                    height: 100.0,
-                    fit: BoxFit.cover,
-                  ),
-                )
-              ],
-            ))
-          ],
-          crossAxisAlignment: CrossAxisAlignment.start,
+              ListTile(
+                autofocus: true,
+                title: Text('My account'),
+                leading: Icon(Icons.radio_button_on),
+              ),
+              ListTile(
+                  dense: true,
+                  title: Text('Inquiry'),
+                  leading: Icon(Icons.youtube_searched_for))
+            ],
+          ),
         ),
-      ),
-    );
+        body: Center(
+            child: TextButton(
+          child: Text(
+            'Show me',
+            style: TextStyle(color: Colors.pink),
+          ),
+          onPressed: () {
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              content: Text('Hellow world'),
+            ));
+            // ScaffoldMessenger.showSnackBar()
+          },
+        )));
   }
 }
