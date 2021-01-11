@@ -140,5 +140,26 @@ Column(
 
 Flutter layout에 관해 헷갈릴때에는 주저없이 `flutter layout cheat sheet`을 활용하자.
 
+Navigator -> Route : App page 를 구성하는 모든 Scaffold라고 생각하자.
+Navigator 는 stack으로 되어있다. `push`, `pop`
+
+view 는 push 되거나 pop되어진 stack을 들여다 보고 있는 것이다. 
+
+라우팅은 다음과 같이 할 수 있다.
+
+
+```dart
+// 추가
+Navigator.push(context, route)
+// context : 출발 라우트의 컨텍스트
+// route : 도착 라우트에 관한 함수
+
+// route = MaterialPageRoute((context)=>SecondPage())
+
+// 제거
+Navigator.pop(context)
+
+```
+
 
 
