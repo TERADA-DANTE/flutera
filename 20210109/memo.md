@@ -162,5 +162,40 @@ Navigator.pop(context)
 
 ```
 
+Dart에서의 literal template
+
+```dart
+String name = "Terada";
+print("Good day $name");
+```
+
+Collection 과 Generic
+Collection : 데이터들을 모아서 가지고 있는 자료구조
+Generic : Collection이 가지고 있는 데이터들의 데이터 타입을 지정한다.
+
+Collection > list(array), set, map
+
+list : fixed-length list, growable list
+
+```dart
+
+// list fixed its length by 5
+var number = new List(5);
+
+// growable list : dynamic
+List<dynamic> number = new List();
+
+number.add(2);
+number.add('string');
+number.add(3.14);
+
+// list : limited by generic
+List<int> number = new List();
+number.add(2);
+number.add('str') // error!
+
+// Map : limited by generic
+Map<String, WidgetBuilder>
+```
 
 
