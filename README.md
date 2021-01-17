@@ -2,6 +2,5 @@
 Flutter with Terada
 
 # Goal
-Master this flutter thing
-
-
+Master this flutter thin
+毎日しないと。。。
